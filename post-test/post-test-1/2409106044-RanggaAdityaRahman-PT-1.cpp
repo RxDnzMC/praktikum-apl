@@ -5,8 +5,6 @@ int login(string nama, int nim) {
     string NamaCek;
     int NimCek;
     int percobaan = 1;
-    cout << nama << endl;
-    cout << nim << endl;
     while (percobaan <= 3) {
         cout << "Percobaan ke: " << percobaan << endl;
         cout << "Masukkan Nama: ";
