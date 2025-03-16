@@ -94,7 +94,10 @@ int main() {
                     break;
                 case 5: cout << "Terima kasih telah menggunakan program ini!" << endl; 
                     break;
-                default: cout << "Pilihan tidak valid! Coba lagi." << endl;
+                default: 
+                    cout << "Pilihan tidak valid! Coba lagi." << endl;
+                    cin.clear();  
+                    cin.ignore(10000, '\n');
             }
 
         } while (pilihan != 5);
