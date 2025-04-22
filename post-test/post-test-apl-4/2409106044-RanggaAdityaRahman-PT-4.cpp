@@ -17,7 +17,6 @@ konsolgame nintendo[MAX_ARRAY];
 
 int indexps = 0, indexxbox = 0, indexnintendo = 0;
 int pilihanupdate, pilihanhapus;
-;
 
 void tambah_data(int kategori)
 {
@@ -135,6 +134,22 @@ void baca_data(int kategori)
         cout << "Pilihan tidak valid! Coba lagi.\n";
     }
 }
+
+void ubah_data_pointer(konsolgame* item)
+
+{
+
+    cout << "Masukkan nama item : ";
+    getline(cin, item->nama);
+    cout << "Masukkan stock item : ";
+    getline(cin, item->stock);
+    cout << "Masukkan harga item : ";
+    getline(cin, item->harga);
+
+}
+
+// Perubahan menggunakan pointer untuk menghemat codingan ===========================================================================
+
 void ubah_data(int kategori)
 {
     if (kategori == 1)
@@ -161,12 +176,7 @@ void ubah_data(int kategori)
         {
             cout << "Pilihan tidak valid! Silakan coba lagi.\n";
         }
-        cout << "Masukkan nama item : ";
-        getline(cin, playstation[pilihanupdate].nama);
-        cout << "Masukkan stock item : ";
-        getline(cin, playstation[pilihanupdate].stock);
-        cout << "Masukkan harga item : ";
-        getline(cin, playstation[pilihanupdate].harga);
+        ubah_data_pointer(&playstation[pilihanupdate]);
     }
 
     else if (kategori == 2)
@@ -193,13 +203,7 @@ void ubah_data(int kategori)
         if (pilihanupdate < 0 || pilihanupdate >= indexxbox)
         {
         }
-
-        cout << "Masukkan nama item : ";
-        getline(cin, xbox[pilihanupdate].nama);
-        cout << "Masukkan stock item : ";
-        getline(cin, xbox[pilihanupdate].stock);
-        cout << "Masukkan harga item : ";
-        getline(cin, xbox[pilihanupdate].harga);
+        ubah_data_pointer(&xbox[pilihanupdate]);
     }
 
     else if (kategori == 3)
@@ -228,12 +232,7 @@ void ubah_data(int kategori)
             cout << "Pilihan tidak valid! Silakan coba lagi.\n";
         }
 
-        cout << "Masukkan nama item : ";
-        getline(cin, nintendo[pilihanupdate].nama);
-        cout << "Masukkan stock item : ";
-        getline(cin, nintendo[pilihanupdate].stock);
-        cout << "Masukkan harga item : ";
-        getline(cin, nintendo[pilihanupdate].harga);
+        ubah_data_pointer(&nintendo[pilihanupdate]);
     }
 
     else
@@ -241,6 +240,12 @@ void ubah_data(int kategori)
         cout << "Pilihan tidak valid! Coba lagi." << endl;
     }
 }
+// ==================================================================================================================================
+
+
+
+
+
 void hapus_data(int kategori)
 {
     if (kategori == 1)
