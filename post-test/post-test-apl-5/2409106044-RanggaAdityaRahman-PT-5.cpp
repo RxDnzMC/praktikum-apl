@@ -148,7 +148,7 @@ void ubah_data_pointer(konsolgame* item)
 
 }
 
-// Perubahan menggunakan pointer untuk menghemat codingan ===========================================================================
+// Perubahan menggunakan pointer untuk menghemat codingan ==========================================================================
 
 void ubah_data(int kategori)
 {
